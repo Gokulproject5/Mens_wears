@@ -1,7 +1,7 @@
-import { Bowlby_One_SC, Bricolage_Grotesque, Caveat } from "next/font/google";
+import { Bowlby_One_SC, Bricolage_Grotesque, Caveat ,Varela_Round } from "next/font/google";
 import "./globals.css";
 
-const caveatSan = Caveat({
+const caveatSan = Varela_Round({
   variable: "--font-caveat",
   subsets: ["latin"],
   weight: "400",

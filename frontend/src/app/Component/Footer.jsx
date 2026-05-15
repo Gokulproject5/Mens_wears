@@ -5,59 +5,81 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <section className='bg-black relative w-full grid gap-10  grid-cols-4 text-gray-400 p-10  '>
-      {/* brand  */}
-      <div className='flex gap-1 items-center '>
-        {/* brand logo  */}
-        <div className='relative w-20 h-20 '>
-          <Image src={"/logo/logo-main-1.png"} fill sizes='800' alt='brand-logo' />
+    <section className='bg-black relative w-full justify-center flex flex-col items-center gap-10 text-gray-400 p-10'>
+      {/* Brand Grid Container */}
+      <div className='grid gap-12 grid-cols-1 md:grid-cols-4 w-full'>
+        
+        {/* Brand Column */}
+        <div className='flex gap-2 '>
+          <div className='relative w-20 h-20 shrink-0'>
+            <Image 
+              src="/logo/logo-main-1.png" 
+              fill 
+              sizes="(max-width: 768px) 80px, 80px" 
+              priority
+              alt='brand-logo' 
+            />
+          </div>
+          <div className='font-serif text-4xl text-white'>
+            <h1>Wears</h1>
+            <p className='text-sm text-gray-400 font-sans mt-1'>Premium Wears with affordable price</p>
+          </div>
         </div>
-        <div className='font-caveat text-4xl'>
-          <h1>Goxz Wears</h1>
-          <p className='text-sm'>Premium Wears with affordable price</p>
+
+        {/* About Us Column */}
+        <nav className='font-bricolage' aria-label="About navigation">
+          <ul className='space-y-2 flex flex-col'>
+            <li><Link href="/about" className='block hover:border-white border-transparent border-b  hover:translate-x-3 transition-transform ease-in-out duration-300 hover:text-white w-fit'>About Us</Link></li>
+            <li><Link href="/refunds" className='block hover:border-white border-transparent border-b hover:translate-x-3 transition-transform ease-in-out duration-300 hover:text-white w-fit'>Refund and Returns Policy</Link></li>
+            <li><Link href="/privacy" className='block hover:border-white border-transparent border-b hover:translate-x-3 transition-transform ease-in-out duration-300 hover:text-white w-fit'>Privacy Policy</Link></li>
+            <li><Link href="/terms" className='block hover:border-white border-transparent border-b hover:translate-x-3 transition-transform ease-in-out duration-300 hover:text-white w-fit'>Terms & Conditions</Link></li>
+          </ul>
+        </nav>
+
+        {/* Contact Us Column */}
+        <nav className='font-bricolage' aria-label="Contact navigation">
+          <ul className='space-y-2 flex flex-col'>
+            <li><Link href="/contact" className='block hover:border-white border-transparent border-b hover:translate-x-3 transition-transform ease-in-out duration-300 hover:text-white w-fit'>Contact Us</Link></li>
+            <li><Link href="/store-locator" className='block hover:border-white border-transparent border-b hover:translate-x-3 transition-transform ease-in-out duration-300 hover:text-white w-fit'>Store Locator</Link></li>
+            <li><Link href="/partner" className='block hover:border-white border-transparent border-b hover:translate-x-3 transition-transform ease-in-out duration-300 hover:text-white w-fit'>Partner</Link></li>
+            <li><Link href="/tips" className='block hover:border-white border-transparent border-b hover:translate-x-3 transition-transform ease-in-out duration-300 hover:text-white w-fit'>Fashion Tips</Link></li>
+          </ul>
+        </nav>
+
+        {/* Newsletter Column */}
+        <div className='font-bricolage flex flex-col gap-4'>
+          <div>
+            <h1 className='text-xl font-black text-white'>Join our email list</h1>
+            <p className='text-sm mt-1'>Sign up for new arrivals, offers, and more!</p>
+          </div>
+          <form className='bg-white rounded-full flex w-full justify-between items-center py-3 px-4 group'>
+            <input 
+              type="email" 
+              required 
+              placeholder='Enter your email' 
+              className='outline-none w-full bg-transparent font-sans text-gray-900 placeholder:text-gray-400 text-sm' 
+            />
+            <button type="submit" aria-label="Subscribe" className='text-gray-600 transition-transform duration-300 ease-in-out group-hover:text-black group-hover:translate-x-1 pl-2'>
+              <MoveRight size={20} />
+            </button>
+          </form>
         </div>
       </div>
 
-      {/* about us */}
-      <nav className=' font-bricolage '>
-        <ol className='space-y-2 flex flex-col' >
-          <Link href={""} className=' hover:translate-x-3 cursor-pointer transition-transform ease-in-out duration-300 hover:border-b w-fit '>About Us</Link>
-          <Link href={""} className=' hover:translate-x-3 cursor-pointer transition-transform ease-in-out duration-300 hover:border-b w-fit '>Refund and Returns Policy</Link >
-          <Link href={""} className=' hover:translate-x-3 cursor-pointer transition-transform ease-in-out duration-300 hover:border-b w-fit '>Privacy Policy</Link >
-          <Link href={""} className=' hover:translate-x-3 cursor-pointer transition-transform ease-in-out duration-300 hover:border-b w-fit '>Terms & Conditions</Link >
-        </ol>
-      </nav>
-      {/* Contact us */}
-      <nav className=' font-bricolage '>
-        <ol className='space-y-2 flex flex-col '>
-          <Link href={""} className=' hover:translate-x-3 cursor-pointer transition-transform ease-in-out duration-300 hover:border-b w-fit '>Contact Us</Link >
-          <Link href={""} className=' hover:translate-x-3 cursor-pointer transition-transform ease-in-out duration-300 hover:border-b w-fit '>Store Locator</Link >
-          <Link href={""} className=' hover:translate-x-3 cursor-pointer transition-transform ease-in-out duration-300 hover:border-b w-fit '>Partner</Link >
-          <Link href={""} className=' hover:translate-x-3 cursor-pointer transition-transform ease-in-out duration-300 hover:border-b w-fit '>Fashion Tips</Link>
-        </ol >
-
-      </nav>
-      {/* news letter */}
-      <nav className=' font-bricolage flex flex-col gap-4 '>
-        <div>
-          <h1 className='text-xl font-black'>  Join our email list </h1>
-          <p>Sign up for new arrivals, offers, and more!</p>
+      {/* Bottom Overlay */}
+      <div className='mt-10 border-t border-gray-800 w-full pt-8 flex flex-col items-center gap-4'>
+        <div className='w-16 h-16 relative opacity-20 filter grayscale'>
+          <Image 
+            src="/logo/logo-main-1.png" 
+            fill 
+            alt="brand overlay" 
+            sizes="64px" 
+          />
         </div>
-        <div className='bg-white rounded-full flex w-full justify-between py-3 pr-5 px-2 group '  >
-          <input type="email" required name="" id="" placeholder='Enter a email' className='outline-none w-full  bg-transparent font-caveat font-semibold placeholder:text-lg text-lg' />
-          <MoveRight className='group-hover:text-gray-900 group-hover:translate-x-2 transition-transform duration-300 ease-in-out ' />
-        </div>
-      </nav>
-      {/* overlay */}
-      <div className='  m-auto justify-center col-span-full ' >
-        <div className=' w-50 h-50 relative   overflow-hidden'>
-          <Image src={"/logo/logo-main-1.png"} fill alt="brand overlay" className='w-full h-full' />
-        </div>
-        <div className='text-center text-xs  font-caveat'>
-          <p>Terms & Conditions</p>
+        <div className='text-center text-xs  text-gray-500 font-caveat'>
+          <p>© {new Date().getFullYear()} X Wears. All rights reserved.</p>
         </div>
       </div>
-
     </section>
   )
 }
