@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+/* Fonts */
+
+@theme {
+  --font-caveat: var(--font-caveat), cursive;
+  --font-bricolage: var(--font-bricolage_Grotesque);
+  --font-bowly: var(--font-bowly);
+}
+
+/* hide scroll bar  */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  height: 12px; 
+ background-color: transparent;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+  
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(220, 220, 221);
+  border-radius: 10px;
+   border-top: 10vh solid transparent;
+  border-bottom: 10vh solid transparent;
+   background-clip: padding-box; 
+}
