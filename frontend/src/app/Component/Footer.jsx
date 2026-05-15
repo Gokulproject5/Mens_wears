@@ -51,7 +51,7 @@ const Footer = () => {
       {/* overlay */}
       <div className='  m-auto justify-center col-span-full ' >
         <div className=' w-50 h-50 relative   overflow-hidden'>
-          <Image src={"/logo/logo-ma-1.png"} fill alt="brand overlay"  className='w-full h-full' />
+          <Image src={"/logo/logo-main-1.png"} fill alt="brand overlay" className='w-full h-full' />
         </div>
         <div className='text-center text-xs  font-caveat'>
           <p>Terms & Conditions</p>
