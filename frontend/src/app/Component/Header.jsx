@@ -48,7 +48,7 @@ const Header = () => {
 
         {/* Cart Icon  */}
         <div className='relative w-7 h-7 cursor-pointer hover:scale-115 transition-transform duration-300 ease-in-out '>
-          <div className='absolute -right-2 -top-4 font-semibold rounded-full  text-center px-2 py-1 text-xs text-white bg-red-500 animate-pulse font-caveat'>
+          <div className='absolute -right-2 -top-4 font-semibold rounded-full  text-center px-2 py-1 text-xs text-white   font-caveat'>
             <p>2</p>
           </div>
           <ShoppingBag className='text-white' />

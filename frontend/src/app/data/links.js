@@ -1,19 +1,19 @@
-export const  navLinks = [
+export const navLinks = [
     {
-        title:"New Arrivals",
-        link:""
+        title: "New Arrivals",
+        link: "/new-arrivals"
     },
     {
-        title:"Linen Collection",
-        link:""
+        title: "Linen Collection",
+        link: "/linen-collection"
     },
     {
-        title:"Premium Collection",
-        link:""
+        title: "Premium Collection",
+        link: "/premium-collection"
     },
     {
-        title:"Old Money",
-        link:""
+        title: "Old Money",
+        link: "/old-money"
     },
-   
+
 ]

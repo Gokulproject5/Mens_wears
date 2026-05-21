@@ -1,6 +1,6 @@
 "use client"
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { CarouselData } from '../data/Images'
 
 const Carousel = () => {
@@ -13,6 +13,15 @@ const Carousel = () => {
     const nextSlide = () => {
         setCurrent((next) => (next == CarouselData.length - 1 ? 0 : next + 1))
     }
+
+    useEffect(() => {
+        const autoSlide = 
+            setInterval(() => {
+                setCurrent((next) => (next === CarouselData.length - 1 ? 0 : next + 1))
+            }, 3000);
+        
+        return () => clearInterval(autoSlide)
+    }, [CarouselData.length])
     return (
         <div className='relative group '>
             {/* left arrow */}
@@ -29,12 +38,12 @@ const Carousel = () => {
                 </div>
             </div>
             {/* Carousel Image */}
-            <div className='overflow-x-auto   flex justify-start gap-10   py-10  mx-auto  no-scrollbar  relative md:px-10 snap-mandatory snap-x '>
+            <div className='overflow-x-auto   flex justify-start gap-5   py-10  mx-auto  scrollbar-none  relative md:px-10 snap-mandatory snap-x '>
 
                 {
                     CarouselData.map(({ image, link, name }, i) => (
-                        <div key={i} style={{ transform: `translateX(-${current * 100}%) `, scrollBehavior: "smooth" }} className={` relative shrink-0 max-w-250 w-full h-100 md:rounded-xl overflow-hidden snap-center  drop-shadow-2xl transition-all duration-300 ease-in-out drop-shadow-black/50 `}>
-                            <Image src={image} alt={name} fill loading='eager' sizes='100' />
+                        <div key={i} style={{ transform: `translateX(-${current * 100}%) `, scrollBehavior: "smooth" }} className={` relative shrink-0  w-full h-130 md:rounded overflow-hidden snap-center  drop-shadow-2xl transition-all duration-300 ease-in-out drop-shadow-black/50 `}>
+                            <Image src={`${image}`} alt={name} fill loading='eager' sizes='100' />
                         </div>
                     ))
                 }
